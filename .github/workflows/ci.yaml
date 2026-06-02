@@ -51,6 +51,7 @@ jobs:
           sudo rm -rf /opt/hostedtoolcache/Python
           sudo rm -rf /var/lib/mysql
           sudo rm -rf /var/lib/redis
+          sudo rm -rf /var/cache/apt
 
       - run: df -h
       - uses: actions/checkout@v5
