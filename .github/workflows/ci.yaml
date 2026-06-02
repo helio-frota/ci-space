@@ -42,6 +42,16 @@ jobs:
           sudo rm -Rf ${RUBY_PATH}
           sudo rm -Rf ${SWIFT_PATH}
           sudo rm -Rf ${GRADLE_HOME}
+
+          sudo rm -rf /usr/share/miniconda
+          sudo rm -rf /opt/hostedtoolcache/Python
+          sudo rm -rf /opt/pipx
+          sudo rm -rf /opt/hostedtoolcache/Ruby
+          sudo rm -rf /opt/hostedtoolcache/Java
+          sudo rm -rf /opt/hostedtoolcache/Python
+          sudo rm -rf /var/lib/mysql
+          sudo rm -rf /var/lib/redis
+
       - run: df -h
       - uses: actions/checkout@v5
       - uses: Swatinem/rust-cache@v2
