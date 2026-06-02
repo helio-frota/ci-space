@@ -63,10 +63,8 @@ jobs:
           sudo rm -rf /usr/local/share/pip-cache
           sudo rm -rf /usr/share/man
           sudo rm -rf /usr/share/doc
-
-          du -sh /usr/local/* 2>/dev/null | sort -rh | head -10
-          du -sh /opt/hostedtoolcache/* 2>/dev/null | sort -rh
-          du -sh /opt/runner-cache/* 2>/dev/null | sort -rh
+          sudo rm -rf /opt/hostedtoolcache/PyPy
+          sudo rm -rf /usr/local/aws-sam-cli
 
       - run: df -h
       - uses: actions/checkout@v5
