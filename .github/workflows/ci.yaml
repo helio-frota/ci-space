@@ -64,8 +64,9 @@ jobs:
           sudo rm -rf /usr/share/man
           sudo rm -rf /usr/share/doc
 
-          du -sh /usr/* 2>/dev/null | sort -rh | head -10
-          du -sh /opt/* 2>/dev/null | sort -rh | head -10
+          du -sh /usr/local/* 2>/dev/null | sort -rh | head -10
+          du -sh /opt/hostedtoolcache/* 2>/dev/null | sort -rh
+          du -sh /opt/runner-cache/* 2>/dev/null | sort -rh
 
       - run: df -h
       - uses: actions/checkout@v5
