@@ -69,5 +69,14 @@ jobs:
       - run: df -h
       - uses: actions/checkout@v5
       - uses: Swatinem/rust-cache@v2
+      - uses: dorny/paths-filter@v4
+        id: filter
+        with:
+          filters: |
+            markdown:
+              - '**/*.md'
       - name: Format
         run: cargo fmt --check
+      - name: Test
+        if: steps.filter.outputs.markdown != 'true'
+        run: cargo test
