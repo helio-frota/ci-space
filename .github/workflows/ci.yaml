@@ -73,10 +73,10 @@ jobs:
         id: filter
         with:
           filters: |
-            markdown:
-              - '**/*.md'
+            code:
+              - '!**/*.md'
       - name: Format
         run: cargo fmt --check
       - name: Test
-        if: steps.filter.outputs.markdown != 'true'
+        if: steps.filter.outputs.code == 'true'
         run: cargo test
